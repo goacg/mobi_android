@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ImageView android:id="@+id/img_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher" />
+    
+    <TextView android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img_icon"
+        android:layout_toLeftOf="@+id/txt_time"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="6dp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:text="zxf" />
+    
+    <TextView android:id="@+id/txt_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_title"
+        android:layout_alignLeft="@+id/txt_title"
+        android:layout_alignRight="@+id/txt_time"
+        android:layout_marginTop="6dp"
+        android:lines="3"
+        android:text="我身边的队友都是猪我身边的队友都是猪我身边的队友都是猪我身边的队友都是猪我身边的队友都是猪" />
+    
+    <TextView android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txt_title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="6dp"
+        android:text="10:14" />
+    
+</RelativeLayout>

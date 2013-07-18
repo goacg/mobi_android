@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="calendar_font_size">13sp</dimen>
+    <dimen name="bell_size">16dp</dimen>
+</resources>

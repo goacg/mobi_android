@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp" >
+    
+    <ImageView android:id="@+id/img_cover"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo" />
+    
+    <RelativeLayout android:id="@+id/layout_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true" >
+        
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/btn_notify"
+            android:padding="10dp">
+	            
+	        <TextView android:id="@+id/txt_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textSize="18sp"
+	            android:textColor="@android:color/white"
+	            android:text="@string/animation_name"
+	            android:paddingLeft="4dp"
+	            android:paddingTop="2dp"
+	            android:paddingRight="4dp"
+	            android:paddingBottom="2dp"
+	            android:background="@drawable/bg_text" />
+	        
+        </RelativeLayout>
+        
+        <ImageButton android:id="@+id/btn_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@+id/btn_watch"
+            android:layout_alignLeft="@+id/btn_watch"
+            android:layout_alignRight="@+id/btn_watch"
+            android:src="@drawable/bell_disabled"
+            android:scaleType="centerCrop"
+            style="@style/Gplus_Btn" />
+        
+        <Button android:id="@+id/btn_watch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/watch"
+            style="@style/Gplus_Btn" />
+        
+    </RelativeLayout>
+    
+</RelativeLayout>

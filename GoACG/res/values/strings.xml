@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">追新番</string>
+    <string name="today">回到今日</string>
+    <string name="feedback">用户反馈</string>
+    <string name="program_cover">program_cover</string>
+    <string name="watch">观看</string>
+    <string name="notify">订阅提醒</string>
+    <string name="cancel_notify">取消提醒</string>
+    <string name="animation_name">Animation name</string>
+    <string name="no_url">没有地址</string>
+    <string name="menu">菜单</string>
+    
+    <string name="age">年龄</string>
+    <string name="sex">性别</string>
+    
+    <string name="sex_male">男</string>
+    <string name="sex_female">女</string>
+    
+    <string name="age_segment_0">小于15</string>
+    <string name="age_segment_1">15~19</string>
+    <string name="age_segment_2">20~24</string>
+    <string name="age_segment_3">25~29</string>
+    <string name="age_segment_4">大于29</string>
+    
+    <string name="menu_about">关于追新番</string>
+    <string name="menu_share">好东西要分享</string>
+    
+</resources>

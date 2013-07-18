@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex">
+        <item>@string/sex_male</item>
+        <item>@string/sex_female</item>
+    </string-array>
+    <string-array name="age">
+        <item>@string/age_segment_0</item>
+        <item>@string/age_segment_1</item>
+        <item>@string/age_segment_2</item>
+        <item>@string/age_segment_3</item>
+        <item>@string/age_segment_4</item>
+    </string-array>
+    <string-array name="menu">
+        <item>@string/menu_share</item>
+        <item>@string/menu_about</item>
+    </string-array>
+</resources>

@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout android:id="@+id/layout_program"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_bottom_bar" />
+    
+    <View android:id="@+id/view_line"
+        android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/layout_bottom_bar"
+        android:background="@color/calendar_grid_line_inner_vertical_color" />
+    
+    <RelativeLayout android:id="@+id/layout_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="4dp"
+        android:background="@color/month_other_bgcolor">
+        
+        <Button android:id="@+id/btn_goto_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/today"
+            style="@style/Gplus_Btn" />
+        
+        <ImageButton android:id="@+id/btn_menu"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo"
+            android:padding="0dp"
+            style="@style/Gplus_Btn" />
+        
+        <Button android:id="@+id/btn_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/feedback"
+            style="@style/Gplus_Btn" />
+        
+    </RelativeLayout>
+    
+</RelativeLayout>
