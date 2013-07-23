@@ -36,6 +36,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 
+/**
+ * 每日中午提醒用的，与PushService略有重复
+ */
 public class NotifyService extends Service {
 
     private static final int NOTIFY_BAR_ICON_WIDTH_IN_DP = 64;

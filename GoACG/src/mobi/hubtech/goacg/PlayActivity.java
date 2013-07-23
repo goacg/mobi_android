@@ -10,6 +10,10 @@ import android.webkit.WebSettings.ZoomDensity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+/**
+ * 播放动画的Activity，
+ * 利用WebView直接加载页面显示
+ */
 public class PlayActivity extends BaseMobclickActivity {
     
     public static final String EXTRA_URL = "url";
@@ -44,6 +48,7 @@ public class PlayActivity extends BaseMobclickActivity {
         
         if (url != null) {
             TreeMap<String, String> map = new TreeMap<String, String>();
+            // 写这句好像没什么用，也没什么影响
             map.put("User-Agent", "Mozilla/5.0 (iPad; U; CPU OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5");
             mWebPlay.loadUrl(url, map);
 //            mWebPlay.loadUrl(url);

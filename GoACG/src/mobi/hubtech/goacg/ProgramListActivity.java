@@ -19,17 +19,26 @@ import com.fima.cardsui.views.CardUI;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 
+/**
+ * 显示每日番目列表的Activity
+ */
 public class ProgramListActivity extends BaseMobclickActivity {
     
     private static final String DATA_FORMAT = "yyyy年M月d日";
     
+    /** Intent传递的时间，格式为java的timestamp，精确到毫秒级，并不是unix的timestamp */
     public static final String EXTRA_TIMESTAMP = "timestamp";
     
+    /** 番目列表 */
     private CardUI mCardTodayProgram;
+    /** 下方日期 */
     private TextView mTxtDate;
+    /** 上一天 */
     private View mBtnPrev;
+    /** 下一天 */
     private View mBtnNext;
     
+    /** 时间工具 */
     private Calendar mCalendarCurrentDay;
     private SimpleDateFormat mSdf; 
     private Dao<Play, Long> mPlayDao;

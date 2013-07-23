@@ -6,6 +6,9 @@ import android.view.View;
 
 import com.fima.cardsui.objects.Card;
 
+/**
+ * 无番目时显示的Card
+ */
 public class EmptyCard extends Card {
 
     @Override

@@ -5,6 +5,10 @@ import java.security.NoSuchAlgorithmException;
 
 public class EncodeUtils {
     
+    /**
+     * @param data 输入数据
+     * @return md5的16进制字符串
+     */
     public static String toMD5String(byte[] data) {
         try {
             MessageDigest md = MessageDigest.getInstance("md5");

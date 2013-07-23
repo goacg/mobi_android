@@ -6,6 +6,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+/**
+ * 接收开机广播，设置提醒
+ */
 public class BootReceiver extends BroadcastReceiver {
 
     @Override

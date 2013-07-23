@@ -25,15 +25,24 @@ import com.fima.cardsui.objects.Card;
 import com.j256.ormlite.dao.Dao;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+/**
+ * 显示每一个番目的Card
+ */
 public class ProgramCard extends Card {
     
+    /** 番目信息 */
     private Play mPlay;
-    
+
+    /** 番目封面 */
     private ImageView mImgCover;
+    /** 番目名字 */
     private TextView mTxtName;
+    /** 提醒用的铃铛 */
     private ImageButton mBtnNotify;
+    /** 观看按钮 */
     private Button mBtnWatch;
     
+    /** 访问番组数据的dao */
     private Dao<Album, Long> mAlbumDao;
     private Dao<Play, Long> mPlayDao;
     
@@ -48,6 +57,7 @@ public class ProgramCard extends Card {
         
         mTxtName.setText(mPlay.getAlbum().getTitle());
         
+        // 如果番目没有图，就用番组的图
         if (mPlay.getBigcover() != null && !"".equals(mPlay.getBigcover())) {
             ImageLoader.getInstance().displayImage(mPlay.getBigcover(), mImgCover);
         } else {
@@ -131,10 +141,19 @@ public class ProgramCard extends Card {
         return view;
     }
     
+    /**
+     * 番目信息由外部设置
+     * @param play 此Card的番目信息
+     */
     public void setPlay(Play play) {
         mPlay = play;
     }
 
+    /**
+     * dao由外部设置
+     * @param albumDao 番组dao
+     * @param playDao 番目dao
+     */
     public void setDao(Dao<Album, Long> albumDao, Dao<Play, Long> playDao) {
         mAlbumDao = albumDao;
         mPlayDao = playDao;

@@ -1,5 +1,8 @@
 package mobi.hubtech.goacg.global;
 
+/**
+ * 公共常量什么的
+ */
 public class C {
     // debug
     public static final String TAG = "mobi.hubtech.goacg";

@@ -35,14 +35,22 @@ import com.umeng.common.Log;
 import com.umeng.fb.FeedbackAgent;
 import com.umeng.update.UmengUpdateAgent;
 
+/**
+ * 主Activity，显示日历
+ */
 public class MainActivity extends BaseMobclickActivity {
     
+	/** 日历Fragment */
     private ProgramFragment mProgramFragment;
     
+    /** 回到今日按钮 */
     private Button mBtnGotoToday;
+    /** 用户反馈按钮 */
     private Button mBtnFeedback;
+    /** 弹头图标按钮，实际是菜单 */
     private View mBtnMenu;
     
+    /** 友盟反馈 */
     private FeedbackAgent mFeedbackAgent;
     
     @Override
@@ -62,6 +70,7 @@ public class MainActivity extends BaseMobclickActivity {
             androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
             UUID deviceUuid = new UUID(androidId.hashCode(), ((long)tmDevice.hashCode() << 32) | tmSerial.hashCode());*/
             
+        	/* 判断网络状态 */
             ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo info = cm.getActiveNetworkInfo();
             if (info != null) {
@@ -72,6 +81,7 @@ public class MainActivity extends BaseMobclickActivity {
                 return;
             }
             
+            /* 用户注册，用户信息由UserInfoUtils类管理，详见UserInfoUtils解释 */
             UserInfo userInfo = UserInfoUtils.getUserInfo(this);
             if (userInfo.getUserID() == -1) {
                 registerForNew();
@@ -179,6 +189,10 @@ public class MainActivity extends BaseMobclickActivity {
         f.show(getFragmentManager(), "MenuDialogFragment");
     }
     
+    /**
+     * 利用wifi的mac地址作为机器唯一id，将mac地址发给服务器，服务器会返回一个用户的uid，
+     * 此uid为标识用户唯一身份的id
+     */
     private void registerForNew() throws UnsupportedEncodingException {
         WifiManager wm = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         String mac = wm.getConnectionInfo().getMacAddress();

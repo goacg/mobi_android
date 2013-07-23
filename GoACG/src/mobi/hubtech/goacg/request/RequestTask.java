@@ -22,6 +22,12 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
+/**
+ * 网络请求用的AsyncTask
+ * execute方法只接受一个有效参数，IRequest，
+ * 如果需要缓存返回Resp对象，设置IRequest对象的
+ * @param <T> 返回值的类型
+ */
 public class RequestTask<T extends BaseResponse> extends AsyncTask<IRequest, Integer, T> {
     
     private static final int BUFFER_SIZE = 1024 * 16;
@@ -29,6 +35,11 @@ public class RequestTask<T extends BaseResponse> extends AsyncTask<IRequest, Int
     private Class<T> mClassOfT;
     private IRequest[] mParams;
     
+    /**
+     * 由于json解析，所以需要返回值的class对象，
+     * 实际上这个对象可以从T里取出来，但是我没有试过这样行不行
+     * @param classOfT 返回值的class对象
+     */
     public RequestTask(Class<T> classOfT) {
         mClassOfT = classOfT;
     }
@@ -38,6 +49,7 @@ public class RequestTask<T extends BaseResponse> extends AsyncTask<IRequest, Int
         try {
             mParams = params;
             IRequest req = params[0];
+            // 有缓存标记则直接返回缓存内容
             if (req.isNeedCache()) {
                 BaseResponse resp = RequestCache.getInstance().get(req.toString());
                 if (resp != null) {
@@ -90,6 +102,10 @@ public class RequestTask<T extends BaseResponse> extends AsyncTask<IRequest, Int
         return mParams[0];
     }
     
+    /**
+     * 类似onPostExecute方法，但是不执行在主线程中
+     * @param result
+     */
     protected void onAfertRequest(T result) {
     }
 }

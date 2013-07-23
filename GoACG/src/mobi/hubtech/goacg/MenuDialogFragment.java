@@ -16,6 +16,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+/**
+ * 显示菜单用的Fragment
+ * 菜单中有两项：分享和staff
+ */
 public class MenuDialogFragment extends DialogFragment {
     
     private ViewGroup mLayoutStaff;

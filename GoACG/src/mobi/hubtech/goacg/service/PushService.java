@@ -38,6 +38,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 
+/**
+ * 检查订阅番目更新用，与NotifyService略有重复
+ */
 public class PushService extends Service {
 
     private static final int NOTIFY_BAR_ICON_WIDTH_IN_DP = 64;

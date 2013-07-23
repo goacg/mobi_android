@@ -4,6 +4,10 @@ import android.app.Activity;
 
 import com.umeng.analytics.MobclickAgent;
 
+/**
+ * 封装友盟各种功能的Activity
+ * 所有Activity应该继承此Activity
+ */
 public class BaseMobclickActivity extends Activity {
     
     @Override
