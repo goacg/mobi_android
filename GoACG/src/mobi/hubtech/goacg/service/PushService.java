@@ -81,12 +81,17 @@ public class PushService extends Service {
         OpenHelperManager.releaseHelper();
     }
     
+    /**
+     * 每小时请求一次，来提醒更新
+     * 8点到21点提醒，其他时间不提醒
+     */
     private Runnable mRunnableUpdate = new Runnable() {
         @Override
         public void run() {
             mHandler.postDelayed(this, 60 * 60 * 1000);
             Calendar calendar = Calendar.getInstance();
             int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            // 我是不是写反了？？？
             if (8 > hour && hour > 21) {
                 return;
             }
@@ -112,14 +117,15 @@ public class PushService extends Service {
                             }
                             if (result.getError_code() == 0) {
                                 Album respAlbum = result.getAlbum();
-                                countList.add(album);// 使用旧的，需要旧的更新时间
+                                countList.add(album);// 使用原来缓存中的对象，需要那个更新时间
                                 try {
-                                    respAlbum.setSub(album.isSub());// 使用旧的订阅数据，其实肯定是true
+                                	// 使用原来缓存中的订阅数据，其实该值肯定是true，因为true查询条件
+                                    respAlbum.setSub(album.isSub());
                                     mAlbumDao.createOrUpdate(respAlbum);
                                 } catch (SQLException e) {
                                     e.printStackTrace();
                                 }
-                            } else if (result.getError_code() == 2) {
+                            } else if (result.getError_code() == 2) {// 这里可能应该是-2，当时可能写错了，GetAlbumResponse里有常量
                                 countList.add(null);
                             } else {
                                 countList.add(null);

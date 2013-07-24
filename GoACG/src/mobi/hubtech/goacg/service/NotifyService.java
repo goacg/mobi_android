@@ -75,8 +75,10 @@ public class NotifyService extends Service {
             calendar.set(Calendar.MILLISECOND, 0);
             final long unixTimestamp = calendar.getTimeInMillis() / 1000;
             mPlayDao.setObjectCache(false);
+            // 找到今日播放的番目
             final List<Play> playList = mPlayDao.queryForEq(Play.SHOW_TIME, unixTimestamp);
             
+            // 今日无番目则返回
             if (playList == null || playList.size() == 0) {
                 return START_NOT_STICKY;
             }
@@ -105,7 +107,7 @@ public class NotifyService extends Service {
                     
                     AlarmUtils.setAlarmTomorrow(NotifyService.this);
                     
-                    // 提醒后更新下一话，如果缓存了下一话，就不请求了
+                    // 提醒后更新所有今日番目的下一话，如果缓存了下一话，就不请求了
                     for (Play play: playList) {
                         try {
                             QueryBuilder<Play, Long> builder = mPlayDao.queryBuilder();
@@ -162,9 +164,17 @@ public class NotifyService extends Service {
         super.onDestroy();
     }
 
+    /**
+     * 取4张图拼成四格大图
+     * @param playList
+     * @param onFinishListener
+     */
     private void makeBitmap(List<Play> playList, final OnMakeBitmapFinishListener onFinishListener) {
-        final int count = playList.size() < 4 ? playList.size() : 4;
+        // 够4张取4张，不够的话，有几张取几张
+    	final int count = playList.size() < 4 ? playList.size() : 4;
         final ArrayList<Bitmap> bitmapList = new ArrayList<Bitmap>(4);
+        // 由于UIL读取图片无法同步返回bitmap对象，所以用countList来计数
+        // 其实用int来计数就行了，忘记当时怎么想的了。。。
         final ArrayList<Boolean> countList = new ArrayList<Boolean>(4);
         for (int i = 0; i < count; i++) {
             String url = playList.get(i).getAlbum().getIcon_32x32();
@@ -203,6 +213,7 @@ public class NotifyService extends Service {
     }
     
     private Bitmap drawBitmap(ArrayList<Bitmap> bitmapList) {
+    	// 要注意设备的dpi，以找到合适的大小
         DisplayMetrics dm = getResources().getDisplayMetrics();
         Rect howBig = new Rect(0, 0, (int) (NOTIFY_BAR_ICON_WIDTH_IN_DP * dm.density), (int) (NOTIFY_BAR_ICON_HEIGHT_IN_DP * dm.density));
         Bitmap bitmap = BitmapUtils.DrawFourBlock(bitmapList, howBig);

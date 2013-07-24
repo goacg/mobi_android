@@ -12,6 +12,11 @@ import android.util.Log;
 
 public class AlarmUtils {
     
+    /**
+     * 设置今天中午12点或明天中午12点的闹钟，
+     * 如果现在时间小于中午12点则设置中午12点，否则设置明天12点
+     * @param context
+     */
     public static void setAlarm(Context context) {
         Calendar c = Calendar.getInstance();
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -31,6 +36,10 @@ public class AlarmUtils {
         am.set(AlarmManager.RTC, c.getTimeInMillis(), pending);
     }
     
+    /**
+     * 设置明天中午12点的闹钟
+     * @param context
+     */
     public static void setAlarmTomorrow(Context context) {
         Calendar c = Calendar.getInstance();
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
