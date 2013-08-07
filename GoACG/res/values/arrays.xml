@@ -12,7 +12,17 @@
         <item>@string/age_segment_4</item>
     </string-array>
     <string-array name="menu">
-        <item>@string/menu_share</item>
+        <item>@string/menu_setting</item>
+        <item>@string/menu_donate</item>
         <item>@string/menu_about</item>
+        <item>@string/menu_feedback</item>
+        <item>@string/menu_share</item>
+        <item>@string/menu_month_calendar</item>
+    </string-array>
+    <string-array name="location">
+        <item>@string/location_hexieshe</item>
+        <item>@string/location_sub</item>
+        <item>@string/location_moe_navigation</item>
+        <item>@string/location_goacg</item>
     </string-array>
 </resources>

@@ -1,20 +1,23 @@
 package mobi.hubtech.goacg.request;
 
-public class BaseResponse {
+public class BaseResponse implements IResponse {
 
     public static final int ERROR_CODE_SUCCESS = 0;
-    public static final int TAG_CACHEED = 65535;
+    public static final int FLAG_CACHEED = 0x00000001;
 
-    private int mark;
+    private int flag;
     
     private int error_code;
     private String msg;
     
-    public int getTag() {
-        return mark;
+    public int getFlag() {
+        return flag;
     }
-    public void setMark(int mark) {
-        this.mark = mark;
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
+    public void addFlag(int flag) {
+    	this.flag |= flag;
     }
     public int getError_code() {
         return error_code;
@@ -28,4 +31,8 @@ public class BaseResponse {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+	@Override
+	public int getErrorCode() {
+		return error_code;
+	}
 }

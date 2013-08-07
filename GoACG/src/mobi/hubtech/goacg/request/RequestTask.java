@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import mobi.hubtech.goacg.global.C;
-import mobi.hubtech.goacg.global.RequestCache;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -41,7 +40,7 @@ public class RequestTask<T extends BaseResponse> extends AsyncTask<IRequest, Int
             if (req.isNeedCache()) {
                 BaseResponse resp = RequestCache.getInstance().get(req.toString());
                 if (resp != null) {
-                    resp.setMark(BaseResponse.TAG_CACHEED);
+                    resp.setFlag(BaseResponse.FLAG_CACHEED);
                     onAfertRequest((T) resp);
                     return (T) resp;
                 }

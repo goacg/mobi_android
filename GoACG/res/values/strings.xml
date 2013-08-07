@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">追新番</string>
+    
     <string name="today">回到今日</string>
     <string name="feedback">用户反馈</string>
     <string name="program_cover">program_cover</string>
@@ -10,7 +11,8 @@
     <string name="cancel_notify">取消提醒</string>
     <string name="animation_name">Animation name</string>
     <string name="no_url">没有地址</string>
-    <string name="menu">菜单</string>
+    <string name="no_network_connection">木有网呀</string>
+    <string name="search">搜索</string>
     
     <string name="age">年龄</string>
     <string name="sex">性别</string>
@@ -24,7 +26,17 @@
     <string name="age_segment_3">25~29</string>
     <string name="age_segment_4">大于29</string>
     
+    <string name="location_goacg">追新番</string>
+    <string name="location_moe_navigation">萌导航</string>
+    <string name="location_hexieshe">和邪神社</string>
+    <string name="location_sub">我的订阅</string>
+    
+    <string name="menu">菜单</string>
+    <string name="menu_setting">调教弹头</string>
+    <string name="menu_donate">打赏追新番</string>
     <string name="menu_about">关于追新番</string>
+    <string name="menu_feedback">我要吐槽</string>
     <string name="menu_share">好东西要分享</string>
+    <string name="menu_month_calendar">穿越时间线</string>
     
 </resources>

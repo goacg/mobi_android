@@ -199,7 +199,7 @@ public class ProgramFragment extends MonthByWeekFragment {
         @Override
         protected void onAfertRequest(GetAlbumsResponse result) {
             if (result != null && result.getError_code() == BaseResponse.ERROR_CODE_SUCCESS) {
-                if (result.getTag() == BaseResponse.TAG_CACHEED) {
+                if (result.getFlag() == BaseResponse.FLAG_CACHEED) {
                     return;
                 }
                 try {

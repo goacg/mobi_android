@@ -6,8 +6,8 @@ import mobi.hubtech.goacg.bean.UserInfo;
 import mobi.hubtech.goacg.calendarextend.ProgramFragment;
 import mobi.hubtech.goacg.db.DAO;
 import mobi.hubtech.goacg.global.C;
-import mobi.hubtech.goacg.global.RequestCache;
 import mobi.hubtech.goacg.global.UserInfoUtils;
+import mobi.hubtech.goacg.request.RequestCache;
 import mobi.hubtech.goacg.request.RequestTask;
 import mobi.hubtech.goacg.request.bean.UserRegiterRequest;
 import mobi.hubtech.goacg.request.bean.UserRegiterResponse;
@@ -68,7 +68,7 @@ public class MainActivity extends BaseMobclickActivity {
                 if (info.getType() != ConnectivityManager.TYPE_WIFI) {
                 }
             } else {
-                Toast.makeText(this, "木有网呀", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.no_network_connection, Toast.LENGTH_SHORT).show();
                 return;
             }
             

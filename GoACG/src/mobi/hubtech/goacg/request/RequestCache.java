@@ -1,9 +1,8 @@
-package mobi.hubtech.goacg.global;
+package mobi.hubtech.goacg.request;
 
 import java.util.Hashtable;
 import java.util.Map;
 
-import mobi.hubtech.goacg.request.BaseResponse;
 
 public class RequestCache {
     

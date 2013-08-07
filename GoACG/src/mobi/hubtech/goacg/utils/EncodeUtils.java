@@ -11,8 +11,7 @@ public class EncodeUtils {
             byte[] hash = md.digest(data);
             StringBuilder hex = new StringBuilder(hash.length * 2);
             for (byte b : hash) {
-                if ((b & 0xFF) < 0x10) hex.append("0");
-                hex.append(Integer.toHexString(b & 0xFF));
+                hex.append(String.format("%02x", b));
             }
             return hex.toString();
         } catch (NoSuchAlgorithmException e) {
