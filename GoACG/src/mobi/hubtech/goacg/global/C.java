@@ -7,7 +7,7 @@ public class C {
     
     // request
 //    public static final String URL = "http://goacg.mobi/active/";
-    public static final String URL = "http://***.***.**.**/active/";
+    public static final String URL = "http://121.199.44.23/active/";
     public static final String GET_ALBUMS = "get_albums";
     public static final String GET_UPDATE_URLS = "get_update_urls";
     public static final String SUB_ALBUM = "sub_album";

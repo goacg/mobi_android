@@ -105,10 +105,10 @@ public class NotifyService extends Service {
                     // 提醒后更新下一话，如果缓存了下一话，就不请求了
                     for (Play play: playList) {
                         try {
-                            QueryBuilder<Play, Long> builder = mPlayDao.queryBuilder();
-                            Where<Play, Long> where = builder.where().gt(Play.VOL, play.getVol());
-                            builder.setWhere(where);
-                            if (builder.query().size() > 0) {
+                            List<Play> list = mPlayDao.queryBuilder().where()
+                                .gt(Play.VOL, play.getVol())
+                            .query();
+                            if (list.size() > 0) {
                                 continue;
                             }
                             

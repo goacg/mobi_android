@@ -6,6 +6,13 @@ public class UserRegiterRequest extends BaseUrlRequest {
     
     private String user_push;
     
+    public UserRegiterRequest() {
+    }
+    
+    public UserRegiterRequest(String userPush) {
+        user_push = userPush;
+    }
+    
     public String getUser_push() {
         return user_push;
     }

@@ -57,7 +57,7 @@ public class ContactActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.contact);
+		setContentView(R.layout.umeng_contact);
 		agent = new FeedbackAgent(this);
 		
 		backBtn = (ImageView) findViewById(R.id.umeng_fb_back);

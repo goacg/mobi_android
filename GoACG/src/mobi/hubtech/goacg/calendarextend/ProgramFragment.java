@@ -39,7 +39,6 @@ import android.widget.AbsListView.OnScrollListener;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.misc.TransactionManager;
-import com.j256.ormlite.stmt.QueryBuilder;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class ProgramFragment extends MonthByWeekFragment {
@@ -153,12 +152,12 @@ public class ProgramFragment extends MonthByWeekFragment {
         try {
             long begin = timeSegment.getBegin();
             long end = timeSegment.getEnd();
-            QueryBuilder<Play, Long> qb = mPlayDao.queryBuilder();
-            qb.setWhere(qb.where()
-                    .ge(Play.SHOW_TIME, begin)
-                    .and()
-                    .le(Play.SHOW_TIME, end));
-            return qb.query();
+            List<Play> list = mPlayDao.queryBuilder().where()
+                .ge(Play.SHOW_TIME, begin)
+                .and()
+                .le(Play.SHOW_TIME, end)
+            .query();
+            return list;
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -56,7 +56,7 @@ public class ConversationActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.conversation);
+		setContentView(R.layout.umeng_conversation);
 		try {
 			agent = new FeedbackAgent(this);
 			defaultConversation = agent.getDefaultConversation();

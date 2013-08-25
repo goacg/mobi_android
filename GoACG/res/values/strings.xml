@@ -13,6 +13,7 @@
     <string name="no_url">没有地址</string>
     <string name="no_network_connection">木有网呀</string>
     <string name="search">搜索</string>
+    <string name="back_to_today">回到今日</string>
     
     <string name="age">年龄</string>
     <string name="sex">性别</string>

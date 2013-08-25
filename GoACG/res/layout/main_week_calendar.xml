@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <fragment android:id="@+id/fragment_week_calendar"
+        android:name="mobi.hubtech.goacg.WeekCalendarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fragment_action_bar"
+        tools:layout="@layout/week_calendar" />
+    
+    <fragment
+        android:id="@+id/fragment_action_bar"
+        android:name="mobi.hubtech.goacg.ActionBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/action_bar" />
+    
+</RelativeLayout>
